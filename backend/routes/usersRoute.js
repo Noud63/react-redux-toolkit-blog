@@ -1,17 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const users = require('../users.json')
+const getAllUsersController = require('../controllers/userController')
 
-router.route('/').get((req, res) => {
-    try {
-        if(users){
-            res.json(users);
-        }
-        
-    } catch (error) {
-        console.log(error.message)
-    }
-    
-})
+router.route('/').get(getAllUsersController)
 
 module.exports = router

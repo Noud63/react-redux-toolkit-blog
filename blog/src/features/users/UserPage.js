@@ -12,16 +12,16 @@ const UserPage = () => {
     const postsForUser = useSelector( state => selectPostByUser(state, Number(userId)))
 
     const postTitles = postsForUser.map(post => (
-        <li key={post.id}>
-            <Link to={`/post/${post.id}`}>{post.title}</Link>
+        <li key={post.id} className="postTitle">
+            &nbsp;<Link to={`/post/${post.id}`} className="link">{post.title}</Link>
         </li>
     ))
 
 
     return (
         <section>
-            <h2>{user?.name}</h2>
-            <ol>{postTitles}</ol>
+            <h3><span className="user">User :</span> {user?.name}</h3>
+            <div style={{marginLeft: '25px'}}><ol>{postTitles}</ol></div>
         </section>
     )
 }

@@ -13,10 +13,13 @@ app.use(cors())
 app.use(express.json())
 dotenv.config()
 
-app.get('/users', (req, res) => {
+app.use('/users', userRoute)
+
+app.get('/posts', (req, res) => {
     res.send({
-        users
+        posts
     })
 })
+
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`. yellow))
