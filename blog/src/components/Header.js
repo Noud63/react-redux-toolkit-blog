@@ -5,12 +5,12 @@ const Header = () => {
 
     return (
         <header className="Header">
-            <h1>SayIt!</h1>
+            <span className="sayit">You Talkin' to me?</span>
             <nav>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="post">Post</Link></li>
-                    <li><Link to="user">Users</Link></li>
+                    <li><Link to="/" className="headerlink">Home</Link></li>
+                    <li><Link to="post" className="headerlink">Post</Link></li>
+                    <li><Link to="user" className="headerlink">Users</Link></li>
                 </ul>
             </nav>
         </header>
