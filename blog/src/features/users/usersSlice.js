@@ -20,7 +20,6 @@ export const getUsers = createAsyncThunk(
     'users/getUsers', async () => {
         try {
             const data = await axios.get('/users')
-            console.log(data.data.users)
             return data.data.users
         } catch (error) {
             return error.message
@@ -33,11 +32,7 @@ const usersSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        // builder.addCase(fetchUsers.fulfilled, (state, action) => {
-        //     return action.payload
-        // }) 
         builder.addCase(getUsers.fulfilled, (state, action) => {
-            console.log(action.payload)
             return action.payload
         })
     }

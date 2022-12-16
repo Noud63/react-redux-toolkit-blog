@@ -10,12 +10,11 @@ const UsersList = () => {
 
     const renderUsers = users.map(user => (
         <li key={user.id}>
-            <Link to={`/user/${user.id}`}>{user.name}</Link>
+            <Link to={`/user/${user.id}`} className="usersnames">{user.name}</Link>
         </li>
     ))
     return (
         <section>
-            {/* <h2>Users</h2> */}
             <ul>{renderUsers}</ul>
         </section>
     )

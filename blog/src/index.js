@@ -25,5 +25,3 @@ root.render(
         </Router>
     </Provider>
 );
-
-console.log(store.getState())

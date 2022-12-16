@@ -2,16 +2,11 @@ import {
     createSlice, 
     createAsyncThunk, 
     createSelector,
-    // createEntityAdapter
 } from '@reduxjs/toolkit'
 import { sub } from 'date-fns'
 import axios from 'axios'
 
-const POST_URL = 'https://jsonplaceholder.typicode.com/posts'
-
-// const postsAdapter = createEntityAdapter({
-//     sortComparer: (a, b) => b.date.localCompare(a.date)
-// })
+// const POST_URL = 'https://jsonplaceholder.typicode.com/posts'
 
 
 const initialState = {
@@ -25,7 +20,8 @@ const initialState = {
 export const fetchPosts = createAsyncThunk(
     'posts/fetchPosts', async () => {
         try {
-            const response = await axios.get(POST_URL)
+            const response = await axios.get('/posts')
+        console.log(response.data)
             return response.data
         } catch (error) {
             return error.message
@@ -36,7 +32,7 @@ export const fetchPosts = createAsyncThunk(
 export const addNewPost = createAsyncThunk(
     'posts/addNewPost', async (initialPost) => {
         try {
-            const response = await axios.post(POST_URL, initialPost)
+            const response = await axios.post('/posts', initialPost)
             return response.data
         } catch (error) {
             return error.message
@@ -47,7 +43,7 @@ export const updatePost = createAsyncThunk(
     'posts/updatePost', async (initialPost) => {
         const { id } = initialPost
         try {
-            const response = await axios.put(`${POST_URL}/${id}`, initialPost)
+            const response = await axios.put(`/posts/${id}`, initialPost)
             return response.data
         } catch (error) {
             // return error.message
@@ -60,10 +56,9 @@ export const deletePost = createAsyncThunk(
     'posts/deletePost', async (initialPost) => {
         const { id } = initialPost
         try {
-            const response = await axios.delete(`${POST_URL}/${id}`)
-            //fake API does not return id so instead
-            if(response.status === 200) return initialPost;
-            return `${response?.status} : ${response?.statusText}`;
+            const response = await axios.delete(`/posts/${id}`)
+            console.log(response.data)
+             return response.data
         } catch (error) {
             return error.message
         }
@@ -137,11 +132,11 @@ const postsSlice = createSlice({
             state.posts = [...posts, action.payload]  //update state.posts with new post
         })
         builder.addCase(deletePost.fulfilled, (state, action) => {
-            if(!action.payload?.id) {
-                console.log('Delete could not complete')
-                console.log(action.payload)
-                return
-            }
+            // if(!action.payload?.id) {
+            //     console.log('Delete could not complete')
+            //     console.log(action.payload)
+            //     return
+            // }
             const { id } = action.payload;
             const posts = state.posts.filter( post => post.id !== id)
             state.posts = posts
@@ -152,7 +147,6 @@ const postsSlice = createSlice({
 export const selectAllPosts = state => state.posts.posts;
 export const getPostsStatus = state => state.posts.status;
 export const getPostsError = state => state.posts.error;
-export const getCount = state => state.posts.count;
 
 export const selectPostById = (state, postId) => state.posts.posts.find(post => post.id === postId)
 
