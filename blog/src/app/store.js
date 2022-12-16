@@ -8,3 +8,5 @@ export const store = configureStore({
        users: usersReducer
     }
 })
+
+console.log(store.getState())
