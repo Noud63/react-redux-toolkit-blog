@@ -77,9 +77,6 @@ const postsSlice = createSlice({
                 existingPost.reactions[reaction]++
             }
         },
-        // increaseCount: (state, action) => {
-        //        state.count = state.count + 1
-        // }
     },
 
     extraReducers: (builder) => {
@@ -132,11 +129,11 @@ const postsSlice = createSlice({
             state.posts = [...posts, action.payload]  //update state.posts with new post
         })
         builder.addCase(deletePost.fulfilled, (state, action) => {
-            // if(!action.payload?.id) {
-            //     console.log('Delete could not complete')
-            //     console.log(action.payload)
-            //     return
-            // }
+            if(!action.payload?.id) {
+                console.log('Delete could not complete')
+                console.log(action.payload)
+                return
+            }
             const { id } = action.payload;
             const posts = state.posts.filter( post => post.id !== id)
             state.posts = posts

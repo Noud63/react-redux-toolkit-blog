@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const getAllPosts = require('../controllers/postsController')
+const { deletePost, getAllPosts } = require('../controllers/postsController')
 
 router.route('/').get(getAllPosts)
+router.route('/:id').delete(deletePost)
 
 module.exports = router

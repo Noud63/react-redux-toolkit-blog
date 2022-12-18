@@ -26,7 +26,7 @@ const EditPostForm = () => {
             </section>
         )
     }
-
+console.log(post)
     const onTitleChanged = e => setTitle(e.target.value)
     const onContentChanged = e => setContent(e.target.value)
     const onAuthorChanged = e => setUserId(e.target.value)
@@ -61,7 +61,7 @@ const EditPostForm = () => {
     const onDeletePostClicked = () => {
         try {
             setRequestStatus('pending')
-            dispatch(deletePost({ id: post.id })).unwrap()
+            dispatch(deletePost({ id: post._id })).unwrap()
 
             setTitle('')
             setContent('')

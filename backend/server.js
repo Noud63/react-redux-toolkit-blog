@@ -21,15 +21,4 @@ app.use('/users', userRoute)
 
 app.use('/posts', postsRoute)
 
-app.delete('/posts/:id', (req, res) => {
-    let id = req.params.id
-    id = Number(id)
-    posts = posts.filter(post => {
-        return post.id !== id
-    })
-    res.send({ posts })
-})
-
-
-
 app.listen(PORT, console.log(`Server running on port ${PORT}`.yellow))
