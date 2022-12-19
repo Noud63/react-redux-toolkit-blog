@@ -6,14 +6,11 @@ import {
 import { sub } from 'date-fns'
 import axios from 'axios'
 
-// const POST_URL = 'https://jsonplaceholder.typicode.com/posts'
-
 
 const initialState = {
     posts: [],
     status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
     error: null,
-    // count: 0
 }
 
 
@@ -41,13 +38,13 @@ export const addNewPost = createAsyncThunk(
 
 export const updatePost = createAsyncThunk(
     'posts/updatePost', async (initialPost) => {
+        // console.log(initialPost)
         const { id } = initialPost
         try {
             const response = await axios.put(`/posts/${id}`, initialPost)
             return response.data
         } catch (error) {
-            // return error.message
-            return initialPost // only for testing
+            return error.message
         }
     })
 
@@ -71,11 +68,12 @@ const postsSlice = createSlice({
     reducers: {
        
         reactionAdded(state, action) {
-            const { postId, reaction } = action.payload
-            const existingPost = state.posts.find(post => post.id === postId)
+            const { id, reaction } = action.payload
+            const existingPost = state.posts.find(post => post._id === id)
             if (existingPost) {
                 existingPost.reactions[reaction]++
             }
+
         },
     },
 
@@ -115,27 +113,27 @@ const postsSlice = createSlice({
                 coffee: 0,
             }
             console.log(action.payload)
-            state.posts.push(action.payload)
+            state.posts.unshift(action.payload)
         });
         builder.addCase(updatePost.fulfilled, (state, action) => {
-            // console.log(action.payload.post._id)
-            if (!action.payload.post._id) {
+            if (!action.payload._id) {
                 console.log('Update could not complete')
                 return
             }
-            const { _id } = action.payload.post
+            const { _id } = action.payload
             action.payload.date = new Date().toISOString()
             const posts = state.posts.filter(post => post._id !== _id)
-            state.posts = [...posts, action.payload.post.post]  //update state.posts with new post
+            state.posts = [...posts, action.payload]  //update state.posts with new post
         })
         builder.addCase(deletePost.fulfilled, (state, action) => {
-            if(!action.payload?.id) {
-                console.log('Delete could not complete')
-                console.log(action.payload)
-                return
-            }
-            const { id } = action.payload;
-            const posts = state.posts.filter( post => post.id !== id)
+            // if(!action.payload?._id) {
+            //     console.log('Delete could not complete')
+            //     console.log(action.payload)
+            //     return
+            // }
+            console.log(action.payload.id)
+            const id = action.payload.id;
+            const posts = state.posts.filter( post => post._id !== id)
             state.posts = posts
         })
     }

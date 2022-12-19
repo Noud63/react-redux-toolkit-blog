@@ -19,7 +19,7 @@ const postsSchema = mongoose.Schema({
         heart: { type: String },
         rocket: { type: String },
         coffee: { type: String }
-    }
+    },
 }, {
     timestamps: true
 })

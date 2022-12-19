@@ -15,7 +15,7 @@ const ReactionButtons = ( {post} ) => {
   const dispatch = useDispatch()
 
   const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {   // returns an array of arrays [['thumbsUp', '👍'], ......]
-    return <button key={name} type="button" className="reactionButton" onClick={ () => dispatch(reactionAdded({postId: post.id, reaction: name}))}>
+    return <button key={name} type="button" className="reactionButton" onClick={ () => dispatch(reactionAdded({id: post._id, reaction: name}))}>
                 {emoji} {post.reactions[name]} 
            </button>
   })

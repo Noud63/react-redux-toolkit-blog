@@ -6,10 +6,10 @@ import { Link, useParams } from 'react-router-dom'
 
 const UserPage = () => {
 
-    const { userId } = useParams()
-    const user = useSelector(state => selectUserById(state, userId))
+    const { id } = useParams()
+    const user = useSelector(state => selectUserById(state, id))
 
-    const postsForUser = useSelector( state => selectPostByUser(state, userId))
+    const postsForUser = useSelector( state => selectPostByUser(state, id))
 
     const postTitles = postsForUser.map(post => (
         <li key={post._id} className="postTitle">
