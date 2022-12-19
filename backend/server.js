@@ -18,7 +18,6 @@ dotenv.config()
 connectToDB()
 
 app.use('/users', userRoute)
-
 app.use('/posts', postsRoute)
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`.yellow))

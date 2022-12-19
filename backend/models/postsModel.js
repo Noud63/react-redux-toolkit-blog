@@ -5,10 +5,6 @@ const postsSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    id: {
-        type: String,
-        required: true
-    },
     title: {
         type: String,
         required: true
@@ -18,12 +14,12 @@ const postsSchema = mongoose.Schema({
         required: true
     },
     reactions: {
-        thumbsUp: {type: String},
-        wow: {type: String},
-        heart: {type: String},
-        rocket: {type: String},
-        coffee: {type: String}
-       }
+        thumbsUp: { type: String },
+        wow: { type: String },
+        heart: { type: String },
+        rocket: { type: String },
+        coffee: { type: String }
+    }
 }, {
     timestamps: true
 })

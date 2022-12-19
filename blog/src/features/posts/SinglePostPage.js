@@ -11,8 +11,8 @@ import { Link } from 'react-router-dom'
 
 const SinglePostPage = () => {
     //Retrieve postId
-    const { postId } = useParams()
-    const post = useSelector(state => selectPostById(state, postId))
+    const { id } = useParams()
+    const post = useSelector(state => selectPostById(state, id))
 
     if(!post) {
         return (
@@ -26,7 +26,7 @@ const SinglePostPage = () => {
         <h2>{post.title}</h2>
         <p>{post.body}</p>
         <p className="postCredit">
-            <Link to={`/post/edit/${post.id}`}>Edit Post</Link>
+            <Link to={`/post/edit/${post._id}`}>Edit Post</Link>
             <PostAuthor userId={post.userId}/>
             <TimeAgo timestamp={post.date}/>
         </p>

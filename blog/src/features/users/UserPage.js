@@ -12,8 +12,8 @@ const UserPage = () => {
     const postsForUser = useSelector( state => selectPostByUser(state, userId))
 
     const postTitles = postsForUser.map(post => (
-        <li key={post.id} className="postTitle">
-            &nbsp;<Link to={`/post/${post.id}`} className="link">{post.title}</Link>
+        <li key={post._id} className="postTitle">
+            &nbsp;<Link to={`/post/${post._id}`} className="link">{post.title}</Link>
         </li>
     ))
 

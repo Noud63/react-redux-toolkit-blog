@@ -2,14 +2,14 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectPostById, updatePost, deletePost } from './postsSlice'
 import { useParams, useNavigate } from 'react-router-dom'
-
 import { selectAllUsers } from "../users/usersSlice";
 
 const EditPostForm = () => {
-    const { postId } = useParams()
+    
+    const { id } = useParams()
     const navigate = useNavigate()
 
-    const post = useSelector((state) => selectPostById(state, postId))
+    const post = useSelector((state) => selectPostById(state, id))
     const users = useSelector(selectAllUsers)
 
     const [title, setTitle] = useState(post?.title)
@@ -26,7 +26,7 @@ const EditPostForm = () => {
             </section>
         )
     }
-console.log(post)
+
     const onTitleChanged = e => setTitle(e.target.value)
     const onContentChanged = e => setContent(e.target.value)
     const onAuthorChanged = e => setUserId(e.target.value)
@@ -37,12 +37,12 @@ console.log(post)
         if (canSave) {
             try {
                 setRequestStatus('pending')
-                dispatch(updatePost({ id: post.id, title, body: content, userId, reactions: post.reactions })).unwrap()
+                dispatch(updatePost({ id: post._id, title, body: content, userId, reactions: post.reactions })).unwrap()
 
                 setTitle('')
                 setContent('')
                 setUserId('')
-                navigate(`/post/${postId}`)
+                navigate(`/post/${post._id}`)
             } catch (err) {
                 console.error('Failed to save the post', err)
             } finally {

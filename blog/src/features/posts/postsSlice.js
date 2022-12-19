@@ -118,15 +118,15 @@ const postsSlice = createSlice({
             state.posts.push(action.payload)
         });
         builder.addCase(updatePost.fulfilled, (state, action) => {
-            if (!action.payload?.id) {
+            // console.log(action.payload.post._id)
+            if (!action.payload.post._id) {
                 console.log('Update could not complete')
-                console.log(action.payload)
                 return
             }
-            const { id } = action.payload
+            const { _id } = action.payload.post
             action.payload.date = new Date().toISOString()
-            const posts = state.posts.filter(post => post.id !== id)
-            state.posts = [...posts, action.payload]  //update state.posts with new post
+            const posts = state.posts.filter(post => post._id !== _id)
+            state.posts = [...posts, action.payload.post.post]  //update state.posts with new post
         })
         builder.addCase(deletePost.fulfilled, (state, action) => {
             if(!action.payload?.id) {
@@ -145,7 +145,7 @@ export const selectAllPosts = state => state.posts.posts;
 export const getPostsStatus = state => state.posts.status;
 export const getPostsError = state => state.posts.error;
 
-export const selectPostById = (state, postId) => state.posts.posts.find(post => post.id === postId)
+export const selectPostById = (state, id) => state.posts.posts.find(post => post._id === id)
 
 export const selectPostByUser = createSelector(
     [selectAllPosts, (state, userId) => userId],
