@@ -7,6 +7,7 @@ import { sub } from 'date-fns'
 import axios from 'axios'
 
 
+
 const initialState = {
     posts: [],
     status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
@@ -147,11 +148,13 @@ export const selectPostById = (state, id) => state.posts.posts.find(post => post
 
 export const selectPostByUser = createSelector(
     [selectAllPosts, (state, userId) => userId],
-    (posts, userId) => posts.filter(post => post.userId === userId)
+    (posts, userId) => posts.filter(post => post.userId === userId) 
 )
 
 
 export const { increaseCount, postAdded, reactionAdded } = postsSlice.actions
 
 export default postsSlice.reducer
+
+
 

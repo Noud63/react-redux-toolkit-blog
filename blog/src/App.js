@@ -4,6 +4,8 @@ import SinglePostPage from './features/posts/SinglePostPage'
 import EditPostForm from './features/posts/EditPostForm'
 import UsersList from './features/users/UsersList'
 import UserPage from './features/users/UserPage'
+import Register from './components/Register'
+import Login from './components/Login'
 import Layout from './components/Layout'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
@@ -24,10 +26,15 @@ function App() {
                     <Route index element={<UsersList />} />
                     <Route path=":id" element={<UserPage />} />
                 </Route>
-                
+
                 <Route path="*" element={<Navigate to="/" replace/>} />
 
+                <Route path='/register' element={<Register />} />
+                <Route path='/login' element={<Login />} />
+
             </Route >
+
+            
         </Routes>
     );
 }

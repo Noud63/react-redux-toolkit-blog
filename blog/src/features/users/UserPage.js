@@ -7,7 +7,9 @@ import { Link, useParams } from 'react-router-dom'
 const UserPage = () => {
 
     const { id } = useParams()
-    const user = useSelector(state => selectUserById(state, id))
+    // const user = useSelector(state => selectUserById(state, id))
+
+    const user = useSelector( state => state.users.find(user => user.id === id))
 
     const postsForUser = useSelector( state => selectPostByUser(state, id))
 

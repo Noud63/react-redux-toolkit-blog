@@ -9,31 +9,44 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color:rgb(219, 228, 236);
-}
 html {
   font-family:volkskrant;
-  background-color: white;
-  color: #000;
 }
 
 body {
   min-height: 100vh;
   font-size: 1.5rem;
+  background-color:rgb(219, 228, 236);
 }
 
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
 input,
 textarea,
-button,
 select {
-  font: inherit;
+  font-family: volkskrant;
+  font-size: 1.2rem;
   margin-bottom: 1em;
+  color: rgb(47, 83, 124);
   background-color:rgb(219, 228, 236);
   border-style: none;
   outline: none;
   border: 1px solid rgb(7, 86, 177);
+}
+
+textarea {
+  height: 200px;
+}
+
+select {
+   height: 30px;
+}
+
+input {
+  height: 30px;
 }
 
 header {
@@ -52,7 +65,56 @@ header {
   top: 0;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  /* box-shadow: 0px 0px 4px rgb(85, 122, 156); */
+}
+
+.registerHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: rgb(7, 86, 177);
+  margin-top: 40px;
+}
+
+.registerBtn {
+  height: 50px;
+  background-color: rgb(0, 21, 44);
+  color: cornflowerblue;
+  cursor: pointer;
+}
+
+.registerLogin {
+  margin: 0 auto;
+  max-width: 600px;
+  height: 40px;
+  position: sticky;
+  top: 299px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  padding-right: 1rem;
+  background-color:rgb(219, 228, 236);
+  font-size: 1rem;
+  color: rgb(82, 137, 219);
+  border-radius: 10px;
+  border: 1px solid  rgb(130, 154, 190);
+}
+
+.login {
+  margin-left: 10px;
+  cursor: pointer;
+  color: rgb(82, 137, 219);
+  text-decoration: none;
+}
+
+.register {
+  color: rgb(82, 137, 219);
+  cursor: pointer;
+   text-decoration: none;
 }
 
 .sayit {
@@ -67,7 +129,7 @@ header {
 }
 
 h3 {
-  color: rgb(50, 65, 80);
+ color: rgb(55, 89, 141);
   margin-bottom: 20px;
 }
 
@@ -167,23 +229,16 @@ ol {
   margin-bottom: 15px
 }
 
-main {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 section {
   margin-top: .5em;
 }
 
 article {
   margin-bottom: 0.5em;
-  margin-top: 0.5em;
+  color:rgb(55, 86, 145);
   border: 1px solid  rgb(130, 154, 190);
   border-radius: 10px;
   padding: 1em;
-  /* background-color: aliceblue; */
-  box-shadow: 0px 2px 2px rgb(120, 155, 190);
 }
 
 h1 {
@@ -191,15 +246,16 @@ h1 {
 }
 
 label {
- color: rgb(7, 86, 177);
+color:rgb(55, 86, 145);
  font-size: 1.2rem;
  margin-bottom: 10px;
 }
 
 h2 {
   margin-bottom: 1rem;
-  color: rgb(7, 86, 177);
+  color:rgb(55, 86, 145);
 }
+
 
 .addnewpost {
   width: 100%;
@@ -209,7 +265,6 @@ h2 {
   margin-bottom: 1rem;
   font-size: 2.2rem;
   color: rgb(7, 86, 177);
-  border-bottom: 1px solid rgb(7, 86, 177);
   margin-top: 40px;
 }
 
@@ -225,36 +280,37 @@ form {
   flex-direction: column;
  }
 
- input {
-    background-color:rgb(219, 228, 236);
-    border-style: none;
-    border: 1px solid rgb(7, 86, 177);
- }
-
-textarea {
-  height: 200px;
-  background-color:rgb(219, 228, 236);
-}
-
 .postCredit {
   font-size: 1rem;
 }
 
+.postAuthor {
+  background-color:transparent;
+   color: rgb(47, 83, 124);
+  
+}
+
+
+/* option {
+  background-color: transparent;
+} */
+
 .postCredit a, 
 .postCredit a:visited {
   margin-right: 0.5rem;
-  color: black;
+  color:rgb(55, 86, 145);
 }
 
 .postCredit a:hover, 
 .postCredit a:focus {
-  color: hsla(0, 0%, 0%, 0.75);
+  color:rgb(55, 86, 145);
 }
 
 .excerpt {
   font-style: italic;
-  color: rgb(70, 88, 104);
+  color:rgb(55, 86, 145);
 }
+
 
 .reactionButton {
   margin: 0 0.25em 0 0;
@@ -268,6 +324,7 @@ textarea {
 
 .savepostbutton {
   height: 50px;
+  font-size: 1rem;
   background-color: rgb(0, 21, 44);
   color:cornflowerblue;
   cursor: pointer;
