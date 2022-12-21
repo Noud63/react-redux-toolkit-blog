@@ -21,7 +21,7 @@ const Login = () => {
         <>
             <div className="registerHeader">Login</div>
             <form >
-                <label htmlFor="registerName">Name:</label>
+                <label htmlFor="registerName">email:</label>
                 <input
                     type="text"
                     id="name"
@@ -29,11 +29,11 @@ const Login = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)} />
 
-                <label htmlFor="registerE mail">Email:</label>
+                <label htmlFor="registerE mail">password:</label>
                 <input
-                    type="text"
-                    id="email"
-                    name="email"
+                    type="password"
+                    id="password"
+                    name="password"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)} />
 

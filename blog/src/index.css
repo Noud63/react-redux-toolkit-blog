@@ -86,14 +86,14 @@ header {
 }
 
 .registerLogin {
-  margin: 0 auto;
+  margin: 20px auto;
   max-width: 600px;
   height: 40px;
   position: sticky;
   top: 299px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   padding-right: 1rem;
@@ -101,18 +101,23 @@ header {
   font-size: 1rem;
   color: rgb(82, 137, 219);
   border-radius: 10px;
-  border: 1px solid  rgb(130, 154, 190);
+  border: 1px solid  rgb(113, 139, 179);
+}
+
+.welcome {
+  margin-left: 10px;
+   color: rgb(7, 86, 177);
 }
 
 .login {
   margin-left: 10px;
   cursor: pointer;
-  color: rgb(82, 137, 219);
+  color: rgb(7, 86, 177);
   text-decoration: none;
 }
 
 .register {
-  color: rgb(82, 137, 219);
+  color: rgb(7, 86, 177);
   cursor: pointer;
    text-decoration: none;
 }
@@ -129,16 +134,16 @@ header {
 }
 
 h3 {
- color: rgb(55, 89, 141);
+ color: rgb(7, 86, 177);
   margin-bottom: 20px;
 }
 
 .usersnames {
-  color: rgb(31, 120, 204);
+  color: rgb(7, 86, 177);
 }
 
 .user {
-  color: rgb(50, 65, 80);
+ color: rgb(7, 86, 177);
 }
 
 nav {
@@ -182,6 +187,9 @@ nav a:hover, nav a:focus {
         align-items: flex-start;
         height: 240px;
      }
+     .registerLogin{
+       top: 240px;
+     }
 
      .sayit {
         color: rgb(212, 0, 0);
@@ -220,13 +228,14 @@ ol {
 
 .link {
   text-decoration: none;
-  color: rgb(64, 110, 141);
+  color: rgb(7, 86, 177);
   font-size: 1.2rem;
   padding-bottom: 20px;
 }
 
 .postTitle {
-  margin-bottom: 15px
+  margin-bottom: 15px;
+  color: rgb(7, 86, 177);
 }
 
 section {
@@ -246,14 +255,18 @@ h1 {
 }
 
 label {
-color:rgb(55, 86, 145);
+color: rgb(7, 86, 177);
  font-size: 1.2rem;
  margin-bottom: 10px;
 }
 
 h2 {
   margin-bottom: 1rem;
-  color:rgb(55, 86, 145);
+  color: rgb(7, 86, 177);
+}
+
+p {
+  color: rgb(7, 86, 177);
 }
 
 
@@ -284,13 +297,10 @@ form {
   font-size: 1rem;
 }
 
-.postAuthor {
+#postContent, #postAuthor, #postTitle {
   background-color:transparent;
-   color: rgb(47, 83, 124);
-  
+  color: rgb(7, 86, 177);
 }
-
-
 /* option {
   background-color: transparent;
 } */
@@ -298,17 +308,17 @@ form {
 .postCredit a, 
 .postCredit a:visited {
   margin-right: 0.5rem;
-  color:rgb(55, 86, 145);
+ color: rgb(7, 86, 177);
 }
 
 .postCredit a:hover, 
 .postCredit a:focus {
-  color:rgb(55, 86, 145);
+  color: rgb(7, 86, 177);
 }
 
 .excerpt {
   font-style: italic;
-  color:rgb(55, 86, 145);
+  color: rgb(7, 86, 177);
 }
 
 
@@ -331,17 +341,19 @@ form {
 }
 
 .saveButton {
-  background-color:rgb(212, 173, 0);
-  color: rgb(255, 236, 183);
+  background-color:rgb(17, 24, 39);
+  color:cornflowerblue;
   text-shadow: 0px 0px 4px rgb(71, 0, 0);
   border-style: none;
+  font-size: 1rem;
   height: 50px;
   cursor: pointer;
 }
 
 .deleteButton {
    background-color: rgb(156, 0, 0);
-  color: rgb(255, 35, 35);
+   font-size: 1rem;
+  color:rgb(219, 228, 236);
   text-shadow: 0px 0px 8px rgb(71, 0, 0);
   border-style: none;
   height: 50px;

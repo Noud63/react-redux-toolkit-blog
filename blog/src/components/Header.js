@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 
 const Header = () => {
 
+    
     return (
         <>
         <header className="Header">
@@ -17,8 +19,12 @@ const Header = () => {
         </header>
 
             <div className="registerLogin">
-                <Link to='/register' className="register">Register</Link>
-                <Link to='/login' className="login">Login</Link>
+                <div className="welcome">Welcome:</div>
+                <div>
+                    <Link to='/register' className="register">Register</Link>
+                    <Link to='/login' className="login">Login</Link>
+                </div>
+                
             </div>
         
         </>

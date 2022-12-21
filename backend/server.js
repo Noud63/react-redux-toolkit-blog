@@ -8,6 +8,7 @@ const colors = require('colors')
 const PORT = process.env.REACT_APP_PORT || 5000
 const userRoute = require('./routes/usersRoute')
 const postsRoute = require('./routes/postsRoute')
+const registerRoute = require('./routes/registerRoute')
 const users = require('./users.json')
 // let posts = require('./posts.json')
 const connectToDB = require('./connectdb/config')
@@ -19,5 +20,6 @@ connectToDB()
 
 app.use('/users', userRoute)
 app.use('/posts', postsRoute)
+app.use('/register', registerRoute)
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`.yellow))

@@ -9,6 +9,7 @@ export const registerUser = createAsyncThunk(
    'registeredUser/register', async(user, thunkAPI)=> {
         try {
             const response = await axios.post( '/register', user) 
+            console.log(response.data)
             return response.data
         } catch (error) {
             const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
@@ -21,13 +22,16 @@ const initialState = {
     registeredUser : {},
     isLoading: false,
     isRegistered: false,
+    isError: false,
     message: ''
 }
 
 const registerSlice = createSlice({
     name: 'registeredUser',
     initialState,
-    reducers: {},
+    reducers: {
+        resetState: () => initialState
+    },
     extraReducers: (builder) => {
         builder.addCase(registerUser.pending, (state, action) => {
                  state.isLoading = true
@@ -39,6 +43,7 @@ const registerSlice = createSlice({
         })
         builder.addCase(registerUser.rejected, (state, action) => {
             state.isLoading = false
+            state.isError = true
             state.message = action.payload
             state.registerUser = {}
         })
@@ -47,4 +52,5 @@ const registerSlice = createSlice({
     
 })
 
+export const { resetState } = registerSlice.actions
 export default registerSlice.reducer

@@ -23,7 +23,7 @@ const UserPage = () => {
     return (
         <section>
             <h3><span className="user">User :</span> {user?.name}</h3>
-            <div style={{marginLeft: '25px'}}><ol>{postTitles}</ol></div>
+            <div style={{marginLeft: '20px'}}><ol>{postTitles}</ol></div>
         </section>
     )
 }
