@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import Welcome from './Welcome'
+import { useSelector } from 'react-redux'
 
 const Header = () => {
 
-    
     return (
         <>
         <header className="Header">
@@ -17,16 +17,7 @@ const Header = () => {
                 </ul>
             </nav>
         </header>
-
-            <div className="registerLogin">
-                <div className="welcome">Welcome:</div>
-                <div>
-                    <Link to='/register' className="register">Register</Link>
-                    <Link to='/login' className="login">Login</Link>
-                </div>
-                
-            </div>
-        
+            <Welcome />
         </>
     )
 }

@@ -19,7 +19,6 @@ export const fetchPosts = createAsyncThunk(
     'posts/fetchPosts', async () => {
         try {
             const response = await axios.get('/posts')
-        console.log(response.data)
             return response.data
         } catch (error) {
             return error.message
@@ -55,7 +54,6 @@ export const deletePost = createAsyncThunk(
         const { id } = initialPost
         try {
             const response = await axios.delete(`/posts/${id}`)
-            console.log(response.data)
              return response.data
         } catch (error) {
             return error.message

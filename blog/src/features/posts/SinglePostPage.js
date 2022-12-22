@@ -13,6 +13,7 @@ const SinglePostPage = () => {
     //Retrieve postId
     const { id } = useParams()
     const post = useSelector(state => selectPostById(state, id))
+    console.log(post)
 
     if(!post) {
         return (

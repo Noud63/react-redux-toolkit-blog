@@ -15,8 +15,7 @@ const Register = () => {
     const dispatch = useDispatch()
 
     const user = useSelector( state => state.registereduser)
-    const { registeredUser, isError, message, isRegistered} = user
-    console.log(registeredUser)
+    const { isError, message, isRegistered } = user
 
     const validInput = [fullname, username, email, password].every(Boolean)
 
@@ -40,7 +39,6 @@ const Register = () => {
      if(isRegistered){
        toast.success('Registered Successfully!')
       //  dispatch(resetState())
-       return
      }else if(isError){
        toast.error(message);
      }
