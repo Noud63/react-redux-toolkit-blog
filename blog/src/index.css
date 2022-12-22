@@ -96,7 +96,7 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  padding-right: 1rem;
+  padding-right: .5rem;
   background-color:rgb(219, 228, 236);
   font-size: 1rem;
   color: rgb(82, 137, 219);
@@ -106,20 +106,20 @@ header {
 
 .welcome {
   margin-left: 10px;
-   color: rgb(7, 86, 177);
+  color: rgb(7, 86, 177);
 }
 
-.login {
+.login, .logout, .register {
+  width: 60px;
   margin-left: 10px;
+  padding: 4px;
   cursor: pointer;
   color: rgb(7, 86, 177);
   text-decoration: none;
-}
-
-.register {
-  color: rgb(7, 86, 177);
-  cursor: pointer;
-   text-decoration: none;
+  outline: none;
+  background-color:transparent;
+  border-radius: 5px;
+  border: 1px solid  rgb(113, 139, 179);
 }
 
 .sayit {

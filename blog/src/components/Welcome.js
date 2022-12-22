@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+import { resetState } from '../features/loginSlice'
 
 
 const Welcome = () => {
@@ -8,6 +9,7 @@ const Welcome = () => {
     const userlogin = useSelector(state => state.loggedinuser)
     const { loggedInUser, isError, message, isLoggedIn } = userlogin
 
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const goRegister = () => {
@@ -19,6 +21,7 @@ const Welcome = () => {
     }
 
     const goLogout = () => {
+       dispatch(resetState())
        navigate('/')
     }
 
@@ -30,7 +33,7 @@ const Welcome = () => {
             <div>
                 <button type="button" className="register" onClick={goRegister}>Register</button>
                 <button type="button" className="login" onClick={goLogin} disabled={isLoggedIn}>Login</button>
-                <button type="button" className="login" onClick={goLogout}>Logout</button>
+                <button type="button" className="logout" onClick={goLogout}>Logout</button>
             </div>
         </div>
     )
