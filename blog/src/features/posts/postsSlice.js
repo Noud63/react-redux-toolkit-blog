@@ -125,9 +125,8 @@ const postsSlice = createSlice({
             state.posts = [...posts, action.payload]  //update state.posts with new post
         })
         builder.addCase(deletePost.fulfilled, (state, action) => {
-            if(!action.payload?._id) {
+            if(!action.payload?.id) {
                 console.log('Delete could not complete')
-                console.log(action.payload)
                 return
             }
             console.log(action.payload.id)
