@@ -12,7 +12,6 @@ export const getUsers = createAsyncThunk(
     'users/getUsers', async () => {
         try {
             const response = await axios.get('/users')
-            console.log(response.data)
             return response.data
         } catch (error) {
             return error.message
@@ -33,7 +32,6 @@ const usersSlice = createSlice({
             state.isLoading = false
             state.isSuccess = true
             state.users = action.payload
-            console.log(action.payload)
         })
         builder.addCase(getUsers.rejected, (state, action) => {
             state.isLoading = false

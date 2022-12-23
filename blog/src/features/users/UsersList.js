@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom'
 
 const UsersList = () => {
 
-    // const users = useSelector(selectAllUsers)
-
     const users = useSelector(state => state.users.users)
 
     const renderUsers = users.map(user => (

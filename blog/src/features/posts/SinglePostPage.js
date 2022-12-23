@@ -13,7 +13,6 @@ const SinglePostPage = () => {
     //Retrieve postId
     const { id } = useParams()
     const post = useSelector(state => selectPostById(state, id))
-    console.log(post)
 
     if(!post) {
         return (
@@ -22,6 +21,8 @@ const SinglePostPage = () => {
             </section>
         )
     }
+
+
   return (
     <article>
         <h2>{post.title}</h2>

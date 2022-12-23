@@ -8,21 +8,23 @@ import { fetchUsers } from './features/users/usersSlice'
 import { fetchPosts } from './features/posts/postsSlice'
 import { getUsers } from './features/users/usersSlice'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { persistor } from '../src/app/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistor } from './app/store';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-// store.dispatch(fetchUsers())
 store.dispatch(fetchPosts())
 store.dispatch(getUsers())
 
 root.render(
     <Provider store={store}>
+        <PersistGate persistor={persistor}>
         <Router>
             <Routes>
                 <Route path='/*' element={<App />} />
             </Routes>
         </Router>
+        </PersistGate>
     </Provider>
 );
