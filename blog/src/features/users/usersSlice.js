@@ -2,13 +2,17 @@ import { createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 import axios from 'axios'
 
 const initialState = {
-    users: []
+    users: [],
+    isLoading: false,
+    isError: false,
+    isSuccess : false
 }
 
 export const getUsers = createAsyncThunk(
     'users/getUsers', async () => {
         try {
             const response = await axios.get('/users')
+            console.log(response.data)
             return response.data
         } catch (error) {
             return error.message
@@ -19,15 +23,25 @@ export const getUsers = createAsyncThunk(
 const usersSlice = createSlice({
     name: 'users',
     initialState,
-    reducers: {},
+    reducers: {
+    },
     extraReducers: (builder) => {
+        builder.addCase(getUsers.pending, (state) => {
+            state.isLoading = true
+        })
         builder.addCase(getUsers.fulfilled, (state, action) => {
-            return action.payload
+            state.isLoading = false
+            state.isSuccess = true
+            state.users = action.payload
+            console.log(action.payload)
+        })
+        builder.addCase(getUsers.rejected, (state, action) => {
+            state.isLoading = false
+            state.isSuccess = false
+            state.users = []
         })
     }
 })
 
-export const selectAllUsers = (state) => state.users
-export const selectUserById = (state, id) => state.users.find( user => user.id === id)
 
 export default usersSlice.reducer

@@ -8,6 +8,7 @@ import { fetchUsers } from './features/users/usersSlice'
 import { fetchPosts } from './features/posts/postsSlice'
 import { getUsers } from './features/users/usersSlice'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { persistor } from '../src/app/store';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
