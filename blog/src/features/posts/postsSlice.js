@@ -101,6 +101,7 @@ const postsSlice = createSlice({
             state.status = 'failed'
             state.error = action.error.message
         });
+
         builder.addCase(addNewPost.fulfilled, (state, action) => {
             action.payload.userId = Number(action.payload.userId)
             action.payload.date = new Date().toISOString()
@@ -114,6 +115,7 @@ const postsSlice = createSlice({
             console.log(action.payload)
             state.posts.unshift(action.payload)
         });
+
         builder.addCase(updatePost.fulfilled, (state, action) => {
             if (!action.payload._id) {
                 console.log('Update could not complete')
@@ -124,6 +126,7 @@ const postsSlice = createSlice({
             const posts = state.posts.filter(post => post._id !== _id)
             state.posts = [...posts, action.payload]  //update state.posts with new post
         })
+        
         builder.addCase(deletePost.fulfilled, (state, action) => {
             if(!action.payload?.id) {
                 console.log('Delete could not complete')

@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { registerUser, resetState } from '../features/registerSlice'
+import { registerUser } from '../features/registerSlice'
 import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
@@ -98,6 +99,9 @@ const Register = () => {
                   onChange={(e) => setRepeatPassword(e.target.value)} />
 
           <button type="button" className="registerBtn" onClick={handleSubmit} disabled={!validInput}>submit</button>
+
+        <div className="alReadyRegistered"><Link to='/login' className="alReadyRegisteredText">Already registered login here.</Link></div>
+
     </form>
     </>
   )

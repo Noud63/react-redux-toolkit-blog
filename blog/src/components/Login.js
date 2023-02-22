@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify';
-import { loginUser, resetState } from '../features/loginSlice'
+import { loginUser } from '../features/loginSlice'
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -34,7 +35,7 @@ const Login = () => {
         } else if (isError) {
             toast.error(message);
         }
-    }, [isError, isLoggedIn, message])
+    }, [isError, isLoggedIn, message, navigate])
 
 
     return (
@@ -66,6 +67,8 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)} />
 
                 <button type="button" className="registerBtn" onClick={handleSubmit} disabled={!validInput}>submit</button>
+
+                <div className="notRegistered"><Link to='/register' className="notRegisteredText">If not registered, register here.</Link></div>
             </form>
         </>
     )

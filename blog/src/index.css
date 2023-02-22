@@ -129,10 +129,6 @@ header {
   color: rgb(82, 137, 219);
 }
 
-.headerlink {
-  color: rgb(31, 31, 121);
-}
-
 h3 {
  color: rgb(7, 86, 177);
   margin-bottom: 20px;
@@ -149,7 +145,6 @@ h3 {
 nav {
   display: flex;
   justify-content: flex-end;
-  
 }
 
 ul {
@@ -169,7 +164,7 @@ nav ul li {
   margin-right: 1rem;
 }
 
-nav a, nav a:visited {
+nav a {
  color: rgb(82, 137, 219);
   text-decoration: none;
   font-size: 1.2rem;
@@ -309,6 +304,7 @@ option {
 .postCredit {
   font-size: 1rem;
   color: rgb(7, 86, 177);
+  cursor: pointer;
 }
 
 .excerpt {
@@ -378,11 +374,11 @@ option {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 450px;
+  width: 450px;
   border-radius: 10px;
   background-color:rgb(219, 228, 236);
   height: 150px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: rgb(61, 115, 177);
   border: 1px solid rgb(129, 160, 199);
   box-shadow: 0px 0px 48px rgb(92, 128, 168);
@@ -392,12 +388,28 @@ option {
 
 @media only screen and (max-width: 440px ){
    .overlayText {
-       font-size: 1.2rem;
+        margin: 10px;
   }
 }
 
 @media only screen and (max-width: 380px ){
    .overlayText {
        font-size: 1.1rem;
+      
   }
 }
+
+.notRegistered, .alReadyRegistered {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notRegisteredText, .alReadyRegisteredText {
+  font-size: 1rem;
+  color: rgb(61, 115, 177);
+  text-decoration: none;
+}
+
