@@ -68,7 +68,7 @@ const Login = () => {
 
                 <button type="button" className="registerBtn" onClick={handleSubmit} disabled={!validInput}>submit</button>
 
-                <div className="notRegistered"><Link to='/register' className="notRegisteredText">If not registered, register here.</Link></div>
+                <div className="notRegistered"><Link to='/register' className="notRegisteredText">If not registered, register <u>here.</u></Link></div>
             </form>
         </>
     )

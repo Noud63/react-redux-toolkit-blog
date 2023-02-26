@@ -38,4 +38,4 @@ return (
 
 export default SinglePostPage
 
-    // < Link to = {`/post/edit/${post._id}`}> Edit Post</ >
+

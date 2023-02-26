@@ -15,11 +15,10 @@ const navigate = useNavigate()
   const handleEditPost = () => {
     if (isLoggedIn && author.name === loggedInUser.name) {
       navigate(`/post/edit/${post._id}`)
-    }else{
-      if (!isLoggedIn || author.name !== loggedInUser.name) {
+    }else if (!isLoggedIn || author.name !== loggedInUser.name) {
         setOverlay(true)
       }
-    }
+    
   }
 
   const removeOverlay = () => {

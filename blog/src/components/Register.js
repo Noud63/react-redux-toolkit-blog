@@ -100,7 +100,7 @@ const Register = () => {
 
           <button type="button" className="registerBtn" onClick={handleSubmit} disabled={!validInput}>submit</button>
 
-        <div className="alReadyRegistered"><Link to='/login' className="alReadyRegisteredText">Already registered login here.</Link></div>
+        <div className="alReadyRegistered"><Link to='/login' className="alReadyRegisteredText">Already registered login <u>here.</u></Link></div>
 
     </form>
     </>

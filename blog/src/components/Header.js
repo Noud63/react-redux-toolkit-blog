@@ -26,7 +26,7 @@ const Header = () => {
             <div className="overlayText">You have to register and log in first!</div>
         </div>}
         <header className="Header">
-            <span className="sayit">You Talkin' to me?</span>
+            <span className="sayit">We Gotta Talk.....</span>
             <nav>
                 <ul>
                     <li><Link to="/" className="headerlink">Home</Link></li>
