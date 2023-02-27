@@ -50,8 +50,6 @@ const AddPostForm = () => {
     </option>
   })
 
-  console.log(users)
-
   return (
     <section>
       <div className="addnewpost">Add a New Post</div>

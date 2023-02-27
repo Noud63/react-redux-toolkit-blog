@@ -40,11 +40,9 @@ const addNewPost = async (req, res) => {
             title: req.body.title,
             body: req.body.body,
             reactions: {
-                thumbsUp: 0,
-                wow: 0,
-                heart: 0,
-                rocket: 0,
-                coffee: 0,
+                like: 0,
+                comment: 0,
+                share: 0
             },
         })
         res.status(200).json(post)

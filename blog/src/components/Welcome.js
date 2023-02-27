@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { resetState } from '../features/loginSlice'
@@ -30,7 +30,7 @@ const Welcome = () => {
 
         <div className="registerLogin">
             <div className="welcome">Welcome: {isLoggedIn ? loggedInUser.username : ""}</div>
-            <div>
+            <div className="loginRegister">
                 <button type="button" className="register" onClick={goRegister}>Register</button>
                 <button type="button" className="login" onClick={goLogin} disabled={isLoggedIn}>Login</button>
                 <button type="button" className="logout" onClick={goLogout}>Logout</button>

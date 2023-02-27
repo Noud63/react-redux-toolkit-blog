@@ -52,10 +52,7 @@ const EditPostForm = () => {
     }
 
     const usersOptions = users.map(user => (
-        <option
-            key={user.id}
-            value={user.id}
-        >{user.name}</option>
+        <option key={user.id} value={user.id} >{user.name}</option>
     ))
 
     const onDeletePostClicked = () => {

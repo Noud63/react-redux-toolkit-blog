@@ -24,14 +24,14 @@ const SinglePostPage = () => {
     }
 
 return (
-    <article>
+    <article className="singlePost">
         <h2>{post.title}</h2>
         <p>{post.body}</p>
         <p className="postCredit">
             <PostAuthor userId={post.userId} isLoggedIn={isLoggedIn} loggedInUser={loggedInUser} post={post}/>
             <TimeAgo timestamp={post.date}/>
         </p>
-            <ReactionButtons post={post}/>
+            <ReactionButtons post={post}/><br/>
     </article>
   )
 }

@@ -14,11 +14,9 @@ const postsSchema = mongoose.Schema({
         required: true
     },
     reactions: {
-        thumbsUp: { type: String },
-        wow: { type: String },
-        heart: { type: String },
-        rocket: { type: String },
-        coffee: { type: String }
+        like: { type: String },
+        comment: { type: String },
+        share: { type: String }
     },
 }, {
     timestamps: true

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import Welcome from './Welcome'
 import { useSelector } from 'react-redux'
@@ -25,17 +25,19 @@ const Header = () => {
         {overlay && <div className="overlay" onClick={removeOverlay}>
             <div className="overlayText">You have to register and log in first!</div>
         </div>}
-        <header className="Header">
-            <span className="sayit">We Gotta Talk.....</span>
-            <nav>
-                <ul>
-                    <li><Link to="/" className="headerlink">Home</Link></li>
-                    <li><Link to={isLoggedIn ? "post" : "/"} className="headerlink" onClick={handleAddPost}>Post</Link></li>
-                    <li><Link to="user" className="headerlink">Users</Link></li>
-                </ul>
+        <header className="header">
+            <span className="wegottatalk">We Gotta Talk.....</span>
+                
+            <nav className="menu">
+                <div><Link to="/" className="headerlink">Home</Link></div>
+                <div><Link to={isLoggedIn ? "post" : "/"} className="headerlink" onClick={handleAddPost}>Post</Link></div>
+                <div><Link to="user" className="headerlink">Users</Link></div>
+                
             </nav>
+
+                <Welcome />
         </header>
-            <Welcome />
+            
         </>
     )
 }

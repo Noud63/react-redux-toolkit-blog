@@ -7,7 +7,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(4, 23, 39);
 }
 
 html {
@@ -15,13 +14,13 @@ html {
 }
 
 body {
+  background-image: url('images/universe.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   min-height: 100vh;
   font-size: 1.5rem;
-  /* background-color:rgb(219, 228, 236); */
-}
-
-.app {
-  height:100vh;
 }
 
 main {
@@ -29,17 +28,41 @@ main {
   margin: 0 auto;
 }
 
+.header {
+  background-image: url('images/universe.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0 auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+}
+
+.wegottatalk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: rgb(155, 189, 228);
+  width: 100%;
+}
+
+
 input,
 textarea,
 select {
   font-family: volkskrant;
   font-size: 1.2rem;
   margin-bottom: 1em;
-  color: rgb(47, 83, 124);
+  color: rgb(100, 140, 185);
   background-color: transparent;
   border-style: none;
   outline: none;
-  border: 1px solid rgb(7, 86, 177);
+  border: 1px solid rgb(100, 140, 185);;
 }
 
 textarea {
@@ -52,26 +75,43 @@ select {
 
 input {
   height: 30px;
-  background-color: transparent;
-  border: 1px solid rgb(100, 140, 185);
+  color: rgb(100, 140, 185);
+  border-style: none;
+  border-bottom: 1px solid rgb(100, 140, 185);
 }
 
-header {
-  /* background-image: url('');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
-  margin: 0 auto;
-  width: 100%;
-  height: 120px;
+input[type=text]:focus {
+  background-color: transparent;
+  color: rgb(100, 140, 185);
+}
+
+.commentBox {
+   position: relative;
+}
+
+.avatar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-end;
-  flex-direction: row;
-  position: sticky;
-  top: 0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(100, 140, 185);
+}
+
+.postcomment {
+  width: 100%;
+  height: 40px;
+  margin-top: 15px;
+  background-color: transparent;
+  border: 1px solid rgb(100, 140, 185);
+  padding-left: 15px;
+  border-radius: 5px;
+}
+
+.postcomment::placeholder {
+  color: rgb(47, 83, 124);
+  padding-top: 6px;
 }
 
 .registerHeader {
@@ -88,9 +128,10 @@ header {
 .registerBtn {
   height: 50px;
   margin-top: 30px;
-  background-color: transparent;
-  color: rgb(100, 140, 185);
+  background-color: rgb(100, 140, 185);
+  color: rgb(0, 6, 12);
   font-size: 1.2rem;
+  font-family: volkskrant;
   outline: none;
   border-style: none;
   border: 1px solid rgb(100, 140, 185);
@@ -98,46 +139,37 @@ header {
 }
 
 .registerLogin {
-  margin: 20px auto;
-  max-width: 600px;
-  height: 50px;
-  /* position: sticky;
-  top: 120px; */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  align-items: center;
   flex-direction: row;
-  padding-right: .5rem;
-  font-size: 1rem;
+  margin: 10px 0 20px 0;
+  padding: 10px 22px;
+  font-size: 1.2rem;
   color: rgb(100, 140, 185);
   border-radius: 8px;
-  box-shadow: inset 0px 0px 5px rgb(100, 140, 185);
-  border: 1px solid  rgb(86, 114, 156);
+  border: 1px solid rgb(121, 150, 194);
+  box-shadow: inset 0px 0px 8px rgb(132, 171, 216);
 }
 
-.welcome {
-  margin-left: 10px;
-  color: rgb(100, 140, 185);
+.loginRegister {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .login, .logout, .register {
-  width: 60px;
-  margin-left: 10px;
-  padding: 4px;
   cursor: pointer;
+  font-size: 1.2rem;
+  font-family: volkskrant;
   color: rgb(100, 140, 185);
   text-decoration: none;
   outline: none;
   border-style: none;
   background-color:transparent;
-}
-
-.sayit {
-  padding-left: 1.5rem;
-  padding-bottom: .5rem;
-  font-size: 2.2rem;
-  color: rgb(100, 140, 185);
 }
 
 h3 {
@@ -156,24 +188,13 @@ h3 {
 
 nav {
   display: flex;
-  justify-content: flex-end;
-}
-
-ul {
-  list-style-type: none;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-nav ul {
-  list-style-type: none;
-}
-
-nav ul li {
-  display: inline-block;
-  margin-right: 1rem;
+  padding: 8px 22px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  border-radius: 8px;
+  border: 1px solid rgb(121, 150, 194);
+  box-shadow: inset 0px 0px 8px rgb(132, 171, 216);
 }
 
 nav a {
@@ -234,7 +255,7 @@ ol {
 
 .link {
   text-decoration: none;
-  color: rgb(7, 86, 177);
+  color: rgb(107, 147, 192);
   font-size: 1.2rem;
   padding-bottom: 20px;
 }
@@ -245,6 +266,7 @@ ol {
 }
 
 .user {
+  margin-top: 20px;
   color: rgb(100, 140, 185);
 }
 
@@ -256,17 +278,14 @@ ol {
   color: rgb(100, 140, 185);
 }
 
-section {
-  margin-top: .5em;
-}
-
 article {
   margin-bottom: 0.5em;
   color: rgb(100, 140, 185);
-  border: 1px solid  rgb(89, 117, 160);
+  border: 1px solid  rgb(121, 150, 194);
+  box-shadow: inset 0px 0px 8px rgb(132, 171, 216);
   border-radius: 10px;
-  padding: 1em;
-  box-shadow: inset 0px 0px 8px rgb(100, 140, 185);
+  padding: 1em 1em .2em 1em;
+ 
 }
 
 h1 {
@@ -274,9 +293,9 @@ h1 {
 }
 
 label {
-color: rgb(100, 140, 185);
- font-size: 1.2rem;
- margin-bottom: 10px;
+  color: rgb(100, 140, 185);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 h2 {
@@ -285,7 +304,7 @@ h2 {
 }
 
 p {
-color: rgb(100, 140, 185);
+  color: rgb(100, 140, 185);
 }
 
 
@@ -296,7 +315,7 @@ color: rgb(100, 140, 185);
   justify-content: center;
   margin-bottom: 1rem;
   font-size: 2.2rem;
-  color: rgb(7, 86, 177);
+  color: rgb(100, 140, 185);
   margin-top: 40px;
 }
 
@@ -314,7 +333,7 @@ form {
 
 #postContent, #postAuthor, #postTitle {
   background-color:transparent;
-  color: rgb(7, 86, 177);
+  color: rgb(100, 140, 185);
 }
 
 option {
@@ -323,7 +342,7 @@ option {
 
 .postCredit a {
   margin-right: 0.5rem;
-color: rgb(100, 140, 185);
+  color: rgb(100, 140, 185);
 }
 
 .postCredit {
@@ -337,12 +356,11 @@ color: rgb(100, 140, 185);
   color: rgb(100, 140, 185);
 }
 
-
 .reactionButton {
   margin: 0 0.25em 0 0;
   background: transparent;
   border: none;
-  color: rgb(100, 140, 185);
+  color: rgb(160, 191, 226);
   font-family: 'Arial';
   font-size: 1rem;
   cursor: pointer;
@@ -350,10 +368,11 @@ color: rgb(100, 140, 185);
 
 .savepostbutton {
   height: 50px;
-  font-family: inherit;
+  background-color: rgb(100, 140, 185);
+  color: rgb(0, 6, 12);
   font-size: 1.2rem;
-  background-color: transparent;
-  color:cornflowerblue;
+  font-family: volkskrant;
+  border-style: none;
   cursor: pointer;
 }
 
@@ -379,6 +398,8 @@ color: rgb(100, 140, 185);
    cursor: pointer;
 }
 
+
+/* ------------------------ Overlay ------------------------- */
 .overlay {
   position: fixed; 
   width: 100%;
@@ -404,7 +425,7 @@ color: rgb(100, 140, 185);
   height: 150px;
   font-size: 1.2rem;
   color: rgb(100, 140, 185);
-  background-color: rgb(2, 17, 31);
+  background-color: rgb(6, 12, 19);
   border: 1px solid rgb(100, 138, 184);
   box-shadow: 0px 0px 48px rgb(92, 128, 168);
   margin: 20px;
@@ -424,6 +445,8 @@ color: rgb(100, 140, 185);
   }
 }
 
+/* ------------------------------------------------------------ */
+
 .notRegistered, .alReadyRegistered {
   width: 100%;
   margin-top: 2rem;
@@ -434,7 +457,7 @@ color: rgb(100, 140, 185);
 
 .notRegisteredText, .alReadyRegisteredText {
   font-size: 1rem;
-  color: rgb(44, 85, 131);
+  color: rgb(87, 129, 177);
   text-decoration: none;
 }
 
