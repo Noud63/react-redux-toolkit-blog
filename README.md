@@ -1,6 +1,6 @@
 <h1>React Redux-Toolkit Blog</h1>
 
-<h6>Front-end: React Redux Toolkit</h6><br>
+<h4>Front-end: React Redux Toolkit</h4><br>
 Back-end: Express Node MongoDB<br><br>
 
 Contains all the expected functionality:<br>
