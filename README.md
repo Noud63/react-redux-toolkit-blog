@@ -1,5 +1,19 @@
 <h1>React Redux-Toolkit Blog</h1>
 
-![reduxtoolkitblogmobileduo2](https://user-images.githubusercontent.com/38325801/209352043-51641025-f62b-425b-91ef-2301a2313e8e.png)<br><br>
+Front-end: React Redux Toolkit<br>
+Back-end: Express Node MongoDB<br><br>
 
-![reduxtoolkitblogmobileduo](https://user-images.githubusercontent.com/38325801/209352035-99e83f6a-0cdd-4089-99a7-a6cea7f8d12c.png)<br><br>
+Contains all the expected functionality:<br>
+View all posts.<br>
+View posts by user.<br>
+View single post.<br>
+Like post.<br>
+Create post.<br>
+Edit post.<br>
+Register and login.<br>
+The app is responsive.<br><br>
+
+![blogmobile](https://user-images.githubusercontent.com/38325801/221890323-226f7fd7-b217-4dd4-8f75-97bf17d48303.png)<br><br>
+![blogmobile2](https://user-images.githubusercontent.com/38325801/221890823-dfa8c402-5489-4fc6-9f3a-5de8a42062bb.png)<br><br>
+![blog2](https://user-images.githubusercontent.com/38325801/221890905-510f56ea-c2ad-45d2-9dab-1c3f07103455.png)<br><br>
+![blog6](https://user-images.githubusercontent.com/38325801/221890944-4878ed79-83b8-4dbf-8d6b-2290be074722.png)<br><br>
