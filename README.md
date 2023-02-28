@@ -10,8 +10,7 @@ View single post.<br>
 Like post.<br>
 Create post.<br>
 Edit post.<br>
-Register and login.<br>
-The app is responsive.<br><br>
+Register and login.<br><br>
 
 ![blogmobile](https://user-images.githubusercontent.com/38325801/221890323-226f7fd7-b217-4dd4-8f75-97bf17d48303.png)<br><br>
 ![blogmobile2](https://user-images.githubusercontent.com/38325801/221890823-dfa8c402-5489-4fc6-9f3a-5de8a42062bb.png)<br><br>
