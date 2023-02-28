@@ -12,7 +12,6 @@ const getAllPosts = async (req, res) => {
 
 const deletePost = async (req, res) => {
     const id = req.params.id
-    console.log(id)
     try {
         const post = await Posts.findByIdAndRemove(id);
         // await post.remove()
@@ -26,7 +25,6 @@ const updatePost = async (req, res) => {
     const id = req.params.id
     try {
         const post = await Posts.findByIdAndUpdate(id, req.body, { new: true } );
-    console.log(post)
         res.status(200).json(post)
     } catch (error) {
         console.error(error)

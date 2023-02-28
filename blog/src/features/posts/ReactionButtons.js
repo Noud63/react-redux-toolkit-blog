@@ -1,11 +1,11 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { reactionAdded } from './postsSlice'
-import { SlLike, SlShareAlt, SlBubble } from "react-icons/sl";
+import { SlLike, SlShareAlt, SlHeart } from "react-icons/sl";
 
 const reactionEmoji = {
   like: <SlLike />,
-  comment: <SlBubble />,
+  comment: <SlHeart />,
   share: <SlShareAlt />,
 }
 

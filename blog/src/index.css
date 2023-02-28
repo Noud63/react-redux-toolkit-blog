@@ -47,10 +47,38 @@ main {
   align-items: center;
   justify-content: center;
   font-size: 5rem;
-  color: rgb(155, 189, 228);
+  color: rgb(123, 162, 206);
   width: 100%;
+  height: 110px;
 }
 
+@media only screen and (max-width: 600px) {
+  .wegottatalk {
+    font-size: 4rem;
+    justify-content: flex-start;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .wegottatalk {
+    font-size: 3rem;
+    justify-content: flex-start;
+    height: 90px;
+  }
+
+  .registerLogin {
+    display: none;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition-delay: 9999s;
+  transition-delay: 9999s;
+}
 
 input,
 textarea,
@@ -145,8 +173,8 @@ input[type=text]:focus {
   justify-content: space-between;
   flex-direction: row;
   margin: 10px 0 20px 0;
-  padding: 10px 22px;
-  font-size: 1.2rem;
+  padding: 13px 22px;
+  font-size: 1rem;
   color: rgb(100, 140, 185);
   border-radius: 8px;
   border: 1px solid rgb(121, 150, 194);
@@ -163,7 +191,7 @@ input[type=text]:focus {
 
 .login, .logout, .register {
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: volkskrant;
   color: rgb(100, 140, 185);
   text-decoration: none;
@@ -172,9 +200,26 @@ input[type=text]:focus {
   background-color:transparent;
 }
 
+@media only screen and (max-width: 480px) {
+  .welcome {
+    display: none;
+  }
+    .registerLogin{
+      justify-content: flex-end;
+    }
+    .loginRegister {
+      width: 100%;
+      justify-content: flex-end;
+    }
+
+    .register, .login {
+      margin-right: 10px;
+    }
+}
+
 h3 {
  color: rgb(152, 182, 216);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .usersnames {
@@ -194,6 +239,7 @@ nav {
   justify-content: space-between;
   border-radius: 8px;
   border: 1px solid rgb(121, 150, 194);
+  box-shadow: inset 0px 0px 8px rgb(0, 8, 17);
   box-shadow: inset 0px 0px 8px rgb(132, 171, 216);
 }
 
@@ -208,7 +254,7 @@ nav a:hover, nav a:focus {
   text-decoration: underline;
 }
 
-@media only screen and (max-width: 535px ){
+/* @media only screen and (max-width: 535px ){
      header {
         flex-direction: column;
         justify-content: flex-end;
@@ -246,7 +292,7 @@ nav a:hover, nav a:focus {
        justify-content: center;
      }
 
-}
+} */
 
 ol {
   color: rgb(50, 65, 80);
@@ -349,11 +395,47 @@ option {
   font-size: 1rem;
   color: rgb(100, 140, 185);
   cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  margin: 0.5em 0;
+}
+
+.postCreditSingle {
+  font-size: 1rem;
+  color: hwb(211 2% 85%);
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  margin: 1.5em 0;
 }
 
 .excerpt {
   font-style: italic;
   color: rgb(100, 140, 185);
+}
+
+.goback {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.goBackBtn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  background-color: rgb(100, 140, 185);
+  border-radius: 40px;
+  font-family: volkskrant;
+  font-size: 1rem;
+  box-shadow: inset 0px 0px 7px rgb(0, 7, 15);
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 .reactionButton {
@@ -377,25 +459,29 @@ option {
 }
 
 .saveButton {
-  background-color: transparent;
-  color:cornflowerblue;
-  text-shadow: 0px 0px 4px rgb(71, 0, 0);
-  border-style: none;
-  font-family: inherit;
-  font-size: 1.2rem;
   height: 50px;
+  margin-top: 20px;
+  background-color: rgb(100, 140, 185);
+  color: rgb(0, 6, 12);
+  font-size: 1.2rem;
+  font-family: volkskrant;
+  outline: none;
+  border-style: none;
+  border: 1px solid rgb(100, 140, 185);
   cursor: pointer;
 }
 
 .deleteButton {
-  background-color: transparent;
-   font-family: inherit;
-  font-size: 1.2rem;
-  color:rgb(181, 207, 255);
-  text-shadow: 0px 0px 8px rgb(71, 0, 0);
-  border-style: none;
   height: 50px;
-   cursor: pointer;
+  margin-top: 20px;
+  background-color: rgb(100, 140, 185);
+  color: rgb(0, 6, 12);
+  font-size: 1.2rem;
+  font-family: volkskrant;
+  outline: none;
+  border-style: none;
+  border: 1px solid rgb(100, 140, 185);
+  cursor: pointer;
 }
 
 
@@ -408,7 +494,7 @@ option {
   left:0;
   right: 0;
   bottom:0;
-  background-color:rgba(1, 12, 22, 0.5);
+  background-color:rgba(1, 12, 22, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -427,7 +513,7 @@ option {
   color: rgb(100, 140, 185);
   background-color: rgb(6, 12, 19);
   border: 1px solid rgb(100, 138, 184);
-  box-shadow: 0px 0px 48px rgb(92, 128, 168);
+  box-shadow: 0px 0px 48px rgb(116, 153, 196);
   margin: 20px;
   padding: 10px;
 }

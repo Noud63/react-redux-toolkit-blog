@@ -10,7 +10,7 @@ const PostAuthor = ({isLoggedIn, loggedInUser, post, userId}) => {
 const navigate = useNavigate()
 
   const users = useSelector(state => state.users.users)
-  const author = users.find(user => user.id === userId)
+  const author = users.find(user => user.id == userId)
 
   const handleEditPost = () => {
     if (isLoggedIn && author.name === loggedInUser.name) {

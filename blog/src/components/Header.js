@@ -29,9 +29,9 @@ const Header = () => {
             <span className="wegottatalk">We Gotta Talk.....</span>
                 
             <nav className="menu">
-                <div><Link to="/" className="headerlink">Home</Link></div>
-                <div><Link to={isLoggedIn ? "post" : "/"} className="headerlink" onClick={handleAddPost}>Post</Link></div>
-                <div><Link to="user" className="headerlink">Users</Link></div>
+                <div><Link to="/" className="headerlink">HOME</Link></div>
+                <div><Link to={isLoggedIn ? "post" : "/"} className="headerlink" onClick={handleAddPost}>POST</Link></div>
+                <div><Link to="user" className="headerlink">USERS</Link></div>
                 
             </nav>
 

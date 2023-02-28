@@ -1,77 +1,77 @@
 [
     {
         "id": "1",
-        "avatar": "../images/leannegraham.png",
+        "avatar": "leannegraham.png",
         "name": "Leanne Graham",
         "username": "Leanne",
         "email": "leanne@gov.org"
     },
     {
         "id": "2",
-        "avatar": "../images/ervinhowell.png",
+        "avatar": "ervinhowell.png",
         "name": "Ervin Howell",
         "username": "Antonette",
         "email": "Shanna@melissa.tv"
     },
     {
         "id": "3",
-        "avatar": "../images/clementinebauch.png",
+        "avatar": "clementinebauch.png",
         "name": "Clementine Bauch",
         "username": "Samantha",
         "email": "Nathan@yesenia.net"
     },
     {
         "id": "4",
-        "avatar": "../images/patricialebsack.png",
+        "avatar": "patricialebsack.png",
         "name": "Patricia Lebsack",
         "username": "Karianne",
         "email": "Julianne.OConner@kory.org"
     },
     {
         "id": "5",
-        "avatar": "../images/chelseydietrich.png",
+        "avatar": "chelseydietrich.png",
         "name": "Chelsey Dietrich",
         "username": "Kamren",
         "email": "Lucio_Hettinger@annie.ca"
     },
     {
         "id": "6",
-        "avatar": "../images/userpic.png",
+        "avatar": "userpic.png",
         "name": "Mrs. Dennis Schulist",
         "username": "Leopoldo_Corkery",
         "email": "Karley_Dach@jasper.info"
     },
     {
         "id": "7",
-        "avatar": "../images/userpic.png",
+        "avatar": "userpic.png",
         "name": "Kurtis Weissnat",
         "username": "Elwyn.Skiles",
         "email": "Telly.Hoeger@billy.biz"
     },
     {
         "id": "8",
-        "avatar": "../images/userpic.png",
-        "name": "Nicholas Runolfsdottir V",
+        "avatar": "nicholasrunolfsdottir.png",
+        "name": "Nicholas Runolfsdottir",
         "username": "Maxime_Nienow",
         "email": "Sherwood@rosamond.me"
     },
     {
         "id": "9",
-       "avatar": "../images/userpic.png",
+       "avatar": "glennareichert.png",
         "name": "Glenna Reichert",
         "username": "Delphine",
         "email": "Chaim_McDermott@dana.io"
     },
     {
         "id": "10",
-        "avatar": "../images/userpic.png",
+        "avatar": "clementinaduBuque.png",
         "name": "Clementina DuBuque",
         "username": "Moriah.Stanton",
         "email": "Rey.Padberg@karina.biz"
     },
     {
         "id": "11",
-        "avatar": "../images/userpic.png",
+        "avatar": "noudvandun.png",
         "name": "Noud van Dun",
         "username": "Noud",
         "email": "noudvandun@gmail.com"
