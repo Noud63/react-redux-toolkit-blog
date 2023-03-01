@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { selectPostById } from './postsSlice'
 import PostAuthor from './PostAuthor'
@@ -11,11 +11,23 @@ const SinglePostPage = () => {
     //Retrieve postId
     const { id } = useParams()
 
-    const post = useSelector(state => selectPostById(state, id))
+    const [ author, setAuthor ] = useState({})
 
+    const post = useSelector(state => selectPostById(state, id))
+  
     const userlogin = useSelector(state => state.loggedinuser)
     const { loggedInUser, isError, message, isLoggedIn } = userlogin
 
+    const users = useSelector(state => state.users.users)
+
+    useEffect(() => {
+        if (post) {
+            const user = users.find(user => user.id == post.userId)
+            setAuthor(user)
+        }
+    })
+    
+    
     if(!post) {
         return (
             <section>
@@ -40,6 +52,8 @@ return (
             <button className="goBackBtn" onClick={goBack}>
                 <SlArrowLeftCircle fontSize="30px" color="rgb(4, 20, 37)"/>
                 </button>
+
+                <div className="singlePostName">post by {author && author.name}</div>
         </div>
           
     </article>

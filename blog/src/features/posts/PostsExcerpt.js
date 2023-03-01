@@ -22,11 +22,7 @@ let PostsExcerpt = ({ post }) => {
               <TimeAgo timestamp={post.date} />
           </p>
           <ReactionButtons post={post} />
-
-          
-              <textarea type="text" className='postcomment' placeholder='comment' />
-             
-          
+               <textarea type="text" className='postcomment' placeholder='comment' />
       </article>
   )
 }

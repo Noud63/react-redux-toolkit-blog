@@ -7,7 +7,7 @@ const Avatar = ({ userId }) => {
   const author = users.find(user => user.id == userId)
 
   return (
-              <div className="avatar"><img src={`images/${author.avatar}`} alt="user" style={{ width: '50px', height: 'auto' }} />{author.name}</div>
+    <div className="avatar"><img src={author && `images/${author.avatar}`} alt="user" style={{ width: '50px', height: 'auto' }} />{author.name}</div>
         )
 }
 

@@ -26,6 +26,7 @@ body {
 main {
   max-width: 600px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .header {
@@ -35,6 +36,7 @@ main {
   background-size: cover;
   background-attachment: fixed;
   margin: 0 auto;
+  padding: 0 10px;
   max-width: 600px;
   display: flex;
   flex-direction: column;
@@ -46,7 +48,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5rem;
+  font-size: 4.9rem;
   color: rgb(123, 162, 206);
   width: 100%;
   height: 110px;
@@ -60,7 +62,7 @@ main {
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 490px) {
   .wegottatalk {
     font-size: 3rem;
     justify-content: flex-start;
@@ -69,6 +71,14 @@ main {
 
   .registerLogin {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .wegottatalk {
+    font-size: 2.8rem;
+    justify-content: flex-start;
+    height: 90px;
   }
 }
 
@@ -198,6 +208,41 @@ input[type=text]:focus {
   outline: none;
   border-style: none;
   background-color:transparent;
+}
+
+.userProfileBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: rgb(100, 140, 185);
+  margin-top: 20px;
+}
+
+.userProfileBox span {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: rgb(100, 140, 185);
+}
+
+.profile {
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.userProfile {
+  width: 100%;
+  padding: 8px 0;
+  border-bottom: 1px solid rgb(100, 140, 185);
+  margin-bottom: 20px;
+}
+
+.profileAvatar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 480px) {
@@ -407,6 +452,16 @@ option {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
   margin: 1.5em 0;
+}
+
+.singlePostName {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: .8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(100, 140, 185);
 }
 
 .excerpt {

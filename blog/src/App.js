@@ -5,6 +5,7 @@ import EditPostForm from './features/posts/EditPostForm'
 import UsersList from './features/users/UsersList'
 import UserPage from './features/users/UserPage'
 import Register from './components/Register'
+import UserProfile from './components/UserProfile'
 import Login from './components/Login'
 import Layout from './components/Layout'
 import { Routes, Route, Navigate } from 'react-router-dom'
@@ -31,6 +32,9 @@ function App() {
 
                 <Route path='/register' element={<Register />} />
                 <Route path='/login' element={<Login />} />
+
+                <Route path='/userprofile' element={<UserProfile />} />
+                
 
             </Route >
 

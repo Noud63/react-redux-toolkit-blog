@@ -25,14 +25,19 @@ const Welcome = () => {
        navigate('/')
     }
 
+
+    const goProfile = () => {
+        navigate('/userprofile')
+    }
+
     
     return (
 
         <div className="registerLogin">
-            <div className="welcome">Welcome: {isLoggedIn ? loggedInUser.username : ""}</div>
+            <div className="welcome">Welcome : {isLoggedIn ? loggedInUser.username : ""}</div>
             <div className="loginRegister">
                 <button type="button" className="register" onClick={goRegister}>Register</button>
-                <button type="button" className="login" onClick={goLogin} disabled={isLoggedIn}>Login</button>
+                <button type="button" className="login" onClick={!isLoggedIn ? goLogin : goProfile} >{isLoggedIn ? "Profile" : "Login"}</button>
                 <button type="button" className="logout" onClick={goLogout}>Logout</button>
             </div>
         </div>
