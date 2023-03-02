@@ -18,20 +18,19 @@ const PostAuthor = ({isLoggedIn, loggedInUser, post, userId}) => {
     }else if (!isLoggedIn || author.name !== loggedInUser.name) {
         setOverlay(true)
       }
-    
-  }
+   }
 
   const removeOverlay = () => {
     setOverlay(false)
-  }
+   }
 
 return (
     <>
       {overlay && <div className="overlay" onClick={removeOverlay}>
         <div className="overlayText">You are not authorized to edit this post!</div>
       </div>}
-      <span className="postCredit" onClick={handleEditPost}><u>Edit Post </u></span>
-      <span>by {author ? author.name : 'Unknown author'}</span>
+    <span className="postCredit" onClick={handleEditPost}><u>Edit Post</u>&nbsp;&nbsp;</span>
+      <span>by {author ? author.name : 'Unknown author'},</span>
     </>
     
   )

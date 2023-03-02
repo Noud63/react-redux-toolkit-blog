@@ -27,6 +27,7 @@ main {
   max-width: 600px;
   margin: 0 auto;
   padding: 0 10px;
+  margin-bottom: 180px;
 }
 
 .header {
@@ -144,12 +145,25 @@ input[type=text]:focus {
   background-color: transparent;
   border: 1px solid rgb(100, 140, 185);
   padding-left: 15px;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 .postcomment::placeholder {
   color: rgb(47, 83, 124);
   padding-top: 6px;
+}
+
+.commentAndAvatar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.commentAvatar {
+  display: flex;
+  height:40px;
+  margin-bottom: 5px;
 }
 
 .registerHeader {
@@ -160,7 +174,7 @@ input[type=text]:focus {
   margin-bottom: 1rem;
   font-size: 2.2rem;
   color: rgb(100, 140, 185);
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .registerBtn {
@@ -272,6 +286,10 @@ h3 {
   color: rgb(100, 140, 185);
 }
 
+ul > li {
+  margin-top: 10px;
+}
+
 .user {
   margin-bottom: 20px;
 }
@@ -298,46 +316,6 @@ nav a {
 nav a:hover, nav a:focus {
   text-decoration: underline;
 }
-
-/* @media only screen and (max-width: 535px ){
-     header {
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        height: 240px;
-     }
-     .registerLogin{
-       top: 240px;
-     }
-
-     .sayit {
-        color: rgb(212, 0, 0);
-     }
-     nav {
-         width: 100%;
-         padding: .5rem 1rem;
-     }
-     nav ul {
-       width: 100%;
-       display: flex;
-       justify-content: space-between;
-     }
-
-     nav ul li {
-       height: 100%;
-       font-size: 1.2rem;
-       margin-right: 0rem;
-       
-     }
-
-     .headerlink {
-       height: 100%;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-     }
-
-} */
 
 ol {
   color: rgb(50, 65, 80);
@@ -391,7 +369,7 @@ label {
 
 h2 {
   margin-bottom: 1rem;
-  color: rgb(100, 140, 185);
+  color: rgb(154, 185, 221);
 }
 
 p {
@@ -404,10 +382,10 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
   font-size: 2.2rem;
   color: rgb(100, 140, 185);
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 p {
@@ -467,6 +445,25 @@ option {
 .excerpt {
   font-style: italic;
   color: rgb(100, 140, 185);
+}
+
+.noMore {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.noMore span {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(1, 9, 19);
+  background-color: rgb(100, 140, 185);
+  padding: 10px;
+  border-radius: 24px;
 }
 
 .goback {

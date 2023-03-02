@@ -8,12 +8,17 @@ import Avatar from '../../components/Avatar'
 
 let PostsExcerpt = ({ post }) => {
 
-    // const users = useSelector(state => state.users.users)
-    // const author = users.find(user => user.id === post.userId)
-  
+    const user = useSelector(state => state.loggedinuser)
+    const { email, name, username, isLoggedIn } = user.loggedInUser
+
+    const users = useSelector(state => state.users.users)
+    const author = users.find(user => user.name === name)
+
   return (
       <article>
+
           <Avatar userId={post.userId}/>
+
           <h3>{post.title}</h3>
           <p className="excerpt">{post.body.substring(0, 75)}...</p>
           <p className="postCredit">
@@ -21,8 +26,14 @@ let PostsExcerpt = ({ post }) => {
               <PostAuthor userId={post.userId} />
               <TimeAgo timestamp={post.date} />
           </p>
+
           <ReactionButtons post={post} />
-               <textarea type="text" className='postcomment' placeholder='comment' />
+
+          <div className="commentAndAvatar">
+              {user ? <div className="commentAvatar"><img src={author && `images/${author.avatar}`} alt="" /></div> : ""}
+              <textarea type="text" className='postcomment' placeholder='comment' />
+          </div>
+          
       </article>
   )
 }

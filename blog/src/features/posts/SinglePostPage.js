@@ -25,7 +25,7 @@ const SinglePostPage = () => {
             const user = users.find(user => user.id == post.userId)
             setAuthor(user)
         }
-    })
+    },[post, users])
     
     
     if(!post) {

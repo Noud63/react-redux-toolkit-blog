@@ -23,9 +23,14 @@ const PostsList = () => {
     }
 
     return (
+        <>
         <section>
             {content}
+          <div className="noMore">
+            <span>That's all!</span>
+            </div>
         </section>
+        </>
     )
 }
 
