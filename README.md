@@ -12,7 +12,7 @@ Create post.<br>
 Edit post.<br>
 Register and login.<br><br>
 
-![blogmobile](https://user-images.githubusercontent.com/38325801/221890323-226f7fd7-b217-4dd4-8f75-97bf17d48303.png)<br><br>
-![blogmobile2](https://user-images.githubusercontent.com/38325801/221890823-dfa8c402-5489-4fc6-9f3a-5de8a42062bb.png)<br><br>
+![blogmobile](https://user-images.githubusercontent.com/38325801/222397150-2c2759fc-5737-4c66-9bde-d69b6c72d9ba.png)<br><br>
+![blogmobile5](https://user-images.githubusercontent.com/38325801/222397947-7f857c0a-d622-4097-81d0-162f0f23a2b8.png)<br><br>
 ![blog2](https://user-images.githubusercontent.com/38325801/221890905-510f56ea-c2ad-45d2-9dab-1c3f07103455.png)<br><br>
 ![blog6](https://user-images.githubusercontent.com/38325801/221890944-4878ed79-83b8-4dbf-8d6b-2290be074722.png)<br><br>
